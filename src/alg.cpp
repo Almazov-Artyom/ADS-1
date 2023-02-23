@@ -39,10 +39,11 @@ uint64_t nextPrime(uint64_t value) {
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-uint64_t sum = 0;
-    while (hbound > 1) {
-        hbound--;
-        sum += nPrime(hbound);
+    uint64_t sum = 0;
+    uint64_t h = 2;
+    while (h < hbound) {
+        sum += h;
+        h = nextPrime(h);
     }
     return sum;
 }
